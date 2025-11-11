@@ -6,6 +6,9 @@
   overflow: hidden;
 }
 
+.loading-o {
+}
+
 .wrapper::before {
   content: '';
   position: absolute;

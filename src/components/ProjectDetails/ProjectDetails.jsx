@@ -9,7 +9,11 @@ export default function ProjectDetails() {
   const project = projects.find((p) => p.id === parseInt(id));
 
   if (loading) {
-    return <div className="loading">Загрузка проекта...</div>;
+    return (
+      <div className="wrapper">
+        <div className="loading">Загрузка проекта...</div>
+      </div>
+    );
   }
 
   if (!project) {

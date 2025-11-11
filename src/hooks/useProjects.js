@@ -529,7 +529,7 @@ export const getProjectData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockData);
-    }, 900);
+    }, 5000);
   });
 };
 

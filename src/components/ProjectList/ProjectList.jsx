@@ -28,16 +28,6 @@ export default function ProjectList() {
     { key: 'planning', label: 'Planning' },
   ];
 
-  if (loading) {
-    return (
-      <div className="wrapper">
-        <div className="container">
-          <div className="loading">Loading projects...</div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="wrapper">
       <div className="container">
@@ -52,7 +42,6 @@ export default function ProjectList() {
           {/* Filters Section */}
           <div className="filters-section">
             <div className="filters-header">
-              {/* onClick={() => setFiltersOpen(!filtersOpen)} */}
               <h3 className="filters-title">Status Filters</h3>
               <div className="search-stats">
                 Projects found: {filteredProjects.length}
@@ -74,52 +63,62 @@ export default function ProjectList() {
             </div>
           </div>
         </div>
-        {/* Empty State */}
-        {filteredProjects.length === 0 && (
-          <div className="empty-state">
-            <input
-              className="search-input"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by project name or description..."
-              type="text"
-            />
-            <div className="empty-desc">
-              <div className="empty-icon">
-                {search || activeFilter !== 'all' ? '🔍' : '📁'}
-              </div>
-              <h3>
-                {search || activeFilter !== 'all'
-                  ? 'No projects found'
-                  : 'No projects available'}
-              </h3>
-              <p>
-                {search
-                  ? 'Try adjusting your search terms or reset filters'
-                  : activeFilter !== 'all'
-                  ? 'Try selecting a different status or reset filters'
-                  : 'Start by creating a new project'}
-              </p>
-            </div>
-          </div>
-        )}
 
-        {/* Projects Grid */}
-        {filteredProjects.length > 0 && (
-          <div className="projects-grid">
-            <input
-              className="search-input"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by project name or description..."
-              type="text"
-            />
-            <div className="listic">
-              {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
+        {/* Loading State */}
+        {loading ? (
+          <div className="empty-state">
+            <div className="loading">Loading projects...</div>
           </div>
+        ) : (
+          <>
+            {/* Empty State */}
+            {filteredProjects.length === 0 && (
+              <div className="empty-state">
+                <input
+                  className="search-input"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search by project name or description..."
+                  type="text"
+                />
+                <div className="empty-desc">
+                  <div className="empty-icon">
+                    {search || activeFilter !== 'all' ? '📁' : ''}
+                  </div>
+                  <h3>
+                    {search || activeFilter !== 'all'
+                      ? 'No projects found'
+                      : 'No projects available'}
+                  </h3>
+                  <p>
+                    {search
+                      ? 'Try adjusting your search terms or reset filters'
+                      : activeFilter !== 'all'
+                      ? 'Try selecting a different status or reset filters'
+                      : 'Start by creating a new project'}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Projects Grid */}
+            {filteredProjects.length > 0 && (
+              <div className="projects-grid">
+                <input
+                  className="search-input"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search by project name or description..."
+                  type="text"
+                />
+                <div className="listic">
+                  {filteredProjects.map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

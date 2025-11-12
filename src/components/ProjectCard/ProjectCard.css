@@ -11,11 +11,13 @@
   background: rgba(255, 255, 255, 0.025);
   backdrop-filter: blur(60px) saturate(180%);
   border-radius: 24px;
+  height: 80px; /* начальная высота */
+  align-items: center;
   display: flex;
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05);
   padding: 28px;
@@ -67,6 +69,7 @@
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  height: 100px; /* конечная высота */
 }
 
 .project_card:hover::after {
@@ -92,24 +95,28 @@
 
 .cat {
   position: absolute;
-  top: -44px;
-  left: 30px;
+  top: -50px;
+  /* rotate: -37deg; */
+  left: -241px;
   padding: 8px 16px;
   /* border-radius: 20px; */
   font-size: 0.75rem;
   font-weight: 650;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  /* backdrop-filter: blur(20px); */
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2); */
-  /* display: inline-block; */
-  /* margin-bottom: 12px; */
+  width: 300px;
+  text-align: end;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  margin-bottom: 12px;
+  border-bottom-right-radius: 14px;
   /* border: 1px solid rgba(255, 255, 255, 0.15); */
   transition: all 0.3s ease;
-  /* overflow: hidden; */
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.025);
-  /* backdrop-filter: blur(60px) saturate(180%); */
-  border-radius: 24px;
+  backdrop-filter: blur(60px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 

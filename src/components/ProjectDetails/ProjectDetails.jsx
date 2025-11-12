@@ -11,18 +11,18 @@ export default function ProjectDetails() {
   if (loading) {
     return (
       <div className="wrapper">
-        <div className="loading">Загрузка проекта...</div>
+        <div className="loading">Loading project...</div>
       </div>
     );
   }
 
   if (!project) {
-    return <div className="loading">Проект не найден</div>;
+    return <div className="loading">Project not found</div>;
   }
 
   return (
-    <div className="wrapper">
-      <div className="container">
+    <div className="wrappero">
+      <div className="containero">
         <div className="item">
           <h2>{project.title}</h2>
 
@@ -30,30 +30,30 @@ export default function ProjectDetails() {
 
           <div className="meta-grid">
             <div className="meta-item">
-              <span className="meta-label">Дата создания</span>
+              <span className="meta-label">Created Date</span>
               <span className="meta-value">{project.createdAt}</span>
             </div>
             <div className="meta-item">
-              <span className="meta-label">Владелец</span>
+              <span className="meta-label">Owner</span>
               <span className="meta-value">{project.owner}</span>
             </div>
             <div className="meta-item">
-              <span className="meta-label">Приоритет</span>
+              <span className="meta-label">Priority</span>
               <span className="meta-value">{project.priority}</span>
             </div>
             <div className="meta-item">
-              <span className="meta-label">Дедлайн</span>
+              <span className="meta-label">Deadline</span>
               <span className="meta-value">{project.deadline}</span>
             </div>
           </div>
 
           <div className="budget-card">
-            <span className="budget-label">Бюджет</span>
+            <span className="budget-label">Budget</span>
             <span className="budget-value">{project.budget}</span>
           </div>
 
           <div className="data-card">
-            <span className="data-label">Команда</span>
+            <span className="data-label">Team</span>
             <div className="data-content">
               {Array.isArray(project.team)
                 ? project.team.join(', ')
@@ -62,7 +62,7 @@ export default function ProjectDetails() {
           </div>
 
           <div className="data-card">
-            <span className="data-label">Технологии</span>
+            <span className="data-label">Technologies</span>
             <div className="data-content">
               {Array.isArray(project.technologies)
                 ? project.technologies.join(', ')
@@ -72,7 +72,7 @@ export default function ProjectDetails() {
 
           <div className="progress-section">
             <div className="progress-header">
-              <span className="progress-label">Прогресс</span>
+              <span className="progress-label">Progress</span>
               <span className="progress-value">{project.progress}%</span>
             </div>
             <div className="progress-bar">
@@ -85,26 +85,26 @@ export default function ProjectDetails() {
 
           <div className="meta-grid">
             <div className="meta-item">
-              <span className="meta-label">Выполнено задач</span>
+              <span className="meta-label">Tasks Completed</span>
               <span className="meta-value">{project.tasksCompleted}</span>
             </div>
             <div className="meta-item">
-              <span className="meta-label">Всего задач</span>
+              <span className="meta-label">Total Tasks</span>
               <span className="meta-value">{project.totalTasks}</span>
             </div>
             <div className="meta-item">
-              <span className="meta-label">Последнее обновление</span>
+              <span className="meta-label">Last Update</span>
               <span className="meta-value">{project.lastUpdate}</span>
             </div>
           </div>
 
           <div className="data-card">
-            <span className="data-label">Клиент</span>
+            <span className="data-label">Client</span>
             <div className="data-content">{project.client}</div>
           </div>
 
           <div className="data-card">
-            <span className="data-label">Требования</span>
+            <span className="data-label">Requirements</span>
             <div className="data-content">
               {Array.isArray(project.requirements)
                 ? project.requirements.map((req, index) => (
@@ -117,11 +117,11 @@ export default function ProjectDetails() {
           </div>
 
           <div className="data-card goal-card">
-            <span className="data-label">Цель проекта</span>
+            <span className="data-label">Project Goal</span>
             <div className="data-content goal-content">{project.goal}</div>
           </div>
 
-          <button onClick={() => navigate(-1)}>Назад к списку</button>
+          <button onClick={() => navigate(-1)}>Back to List</button>
         </div>
       </div>
     </div>

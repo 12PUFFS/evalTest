@@ -529,7 +529,7 @@ export const getProjectData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockData);
-    }, 5000);
+    });
   });
 };
 
@@ -546,5 +546,5 @@ export const useProjects = () => {
     loadProjects();
   }, []);
 
-  return { projects, loading };
+  return { projects, loading, setProjects };
 };

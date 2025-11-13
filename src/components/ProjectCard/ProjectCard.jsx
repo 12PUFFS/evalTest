@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './ProjectCard.css';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onDelete }) {
   return (
     <div className="project_card">
       <div className="project-info">
@@ -23,6 +23,7 @@ export default function ProjectCard({ project }) {
           </p>
           <h2>{project.title}</h2>
         </Link>
+        <button onClick={() => onDelete(project.id)}></button>
       </div>
     </div>
   );

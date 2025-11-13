@@ -24,7 +24,30 @@
 .listic {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding-right: 50px;
+  /* padding: 50px; */
+}
+
+/* Стилизация скроллбара */
+.listic::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listic::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.093);
+  border-radius: 3px;
+}
+
+.listic::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.listic::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Основной контейнер с layout */

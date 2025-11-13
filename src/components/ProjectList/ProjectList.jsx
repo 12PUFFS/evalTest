@@ -4,9 +4,13 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import './ProjectList.css';
 
 export default function ProjectList() {
-  const { projects, loading } = useProjects();
+  const { projects, setProjects, loading } = useProjects();
   const [search, setSearch] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
+
+  const deleteProject = (id) => {
+    setProjects((prev) => prev.filter((p) => p.id !== id));
+  };
 
   const filteredProjects = projects.filter((project) => {
     const matchesSearch =
@@ -113,7 +117,11 @@ export default function ProjectList() {
                 />
                 <div className="listic">
                   {filteredProjects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
+                    <ProjectCard
+                      onDelete={deleteProject}
+                      key={project.id}
+                      project={project}
+                    />
                   ))}
                 </div>
               </div>

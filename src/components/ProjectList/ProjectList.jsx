@@ -84,6 +84,7 @@ export default function ProjectList() {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by project name or description..."
                   type="text"
+                  aria-label="Search projects"
                 />
                 <div className="empty-desc">
                   <div className="empty-icon">
@@ -121,6 +122,7 @@ export default function ProjectList() {
                       onDelete={deleteProject}
                       key={project.id}
                       project={project}
+                      aria-label={`Delete project ${project.title}`}
                     />
                   ))}
                 </div>
